@@ -1,0 +1,29 @@
+{
+  "name": "web_site",
+  "version": "0.0.0",
+  "description": "Fritim & Atanova's Web Site",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atahabaki/team_website.git"
+  },
+  "keywords": [
+    "website",
+    "fritim",
+    "atanova"
+  ],
+  "author": "atahabaki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atahabaki/team_website/issues"
+  },
+  "homepage": "https://github.com/atahabaki/team_website#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
+    "pug": "^3.0.0"
+  }
+}
