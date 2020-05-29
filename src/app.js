@@ -4,15 +4,20 @@ const path = require('path');
 const fs = require('fs');
 
 class App {
-	constructor(env) {
+	constructor() {
 		/**
 		 * Arguments:
 		 * ==========
 		 * env (String):
 		 */
-		this.env=env;
+		this.settings=this.getConfigs();
+		this.env=this.settings.hasOwnProperty("Environment") ? this.settings["Environment"] : "Development";
+		console.log(`Environment: ${this.env}`)
 	}
-	run(dev_callback,pro_callback) {
+	getConfigs() {
+		return JSON.parse(fs.readFileSync(path.join(__dirname,"config.json")));
+	}
+	run(callback) {
 		/**
 		 * Arguments:
 		 * ==========
@@ -20,36 +25,22 @@ class App {
 		 * pro_callback (callback): run on production...
 		 */
 		switch (this.env) {
-			case "pro":
-				pro_callback()
-				break;
-			case "dev":
-				dev_callback()
+			case "Production":
+			case "Development":
+				callback()
 				break;
 			default:
-				console.error(`Wrong environment... Available ones: 'dev' and 'pro'`);
+				console.error(`Available environment types are: "Production" and "Development"`);
 		}
 	}
 }
 
-function init() {
-	let settings;
-	try {
-		settings= JSON.parse(fs.readFileSync(path.join(__dirname,"config.json")));
-	}
-	catch (e) {
-		console.log("Could not find any config.json in current directory...")
-	}
-	finally {
-		let _app;
-		if (settings.hasOwnProperty("Environment")) {
-			_app=new App(settings["Environment"]);
-		}
-		else {
-			console.log("Could not found the Environment variable...");
-			_app=new App('Development');
-		}
-	}
-}
+let _app = new App();
+_app.run(()=>{
+	const homeRouter = require('./routes/home')
+	app.set('views', path.join(__dirname,'views'))
+	app.set('view engine', 'pug')
 
-init();
+	app.use('/', homeRouter)
+	app.listen(process.env.PORT || 80, "127.0.0.1")
+});
