@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		title #{title} - Fritim & Atanova
+		link(rel="stylesheet" href="css/root.min.css")
+	body
+		noscript
+			Without JavaScript, this won't work as designed.
+		div#navbar.top.fscreen
+			form.center-scrn(method='POST' action='/root/login')
+				h1 #{title}
+				div.form-group
+					label(for='uname') User Name:
+					input#uname.form-input(type='text' placeholder='User name')
+				div.form-group
+					label(for='pwd') Password:
+					input#pwd.form-input(type='password' placeholder='Password')
+				button.btn.btn-pr.center-blck(type='submit') LOGIN

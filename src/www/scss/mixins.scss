@@ -1,0 +1,4 @@
+@mixin blurry($bpx: 5px) {
+	backdrop-filter: blur($bpx);
+	-webkit-backdrop-filter: blur($bpx);
+}

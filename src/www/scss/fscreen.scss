@@ -1,0 +1,13 @@
+.fscreen {
+	padding: 4em;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.float-scrn {
+	z-index: 1;
+	overflow: hidden;
+	overflow-y: visible;
+}

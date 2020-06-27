@@ -1,0 +1,28 @@
+header {
+	position: fixed;
+	width: 100vw;
+	padding: 1em;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	transition: $trans;
+	a {
+		padding: 1em;
+		color: #000;
+		transition: .3s all ease-in-out;
+		&:link, &:visited {
+			color: #000;
+		}
+		&:hover {
+			opacity: .5;
+			text-decoration: underline;
+		}
+	}
+}
+
+header.scrolled {
+	box-shadow: 0 1px 5px 1px #333;
+	background: $bgclr-primary;
+	@include blurry($blrpx);
+}

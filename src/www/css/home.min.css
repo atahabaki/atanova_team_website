@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   border: 0;
   margin: 0;
@@ -7,6 +8,145 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.center-scrn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-cntnt {
+  text-align: center;
+}
+
+.center-blck {
+  display: block;
+  margin: auto;
+}
+
+.fscreen {
+  padding: 4em;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.float-scrn {
+  z-index: 1;
+  overflow: hidden;
+  overflow-y: visible;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  padding: 1em;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: 0.3s all ease-in-out;
+}
+header a {
+  padding: 1em;
+  color: #000;
+  transition: 0.3s all ease-in-out;
+}
+header a:link, header a:visited {
+  color: #000;
+}
+header a:hover {
+  opacity: 0.5;
+  text-decoration: underline;
+}
+
+header.scrolled {
+  box-shadow: 0 1px 5px 1px #333;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.bgscrn {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bgscrn video {
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#welcome {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+#welcome .center-scrn h1 {
+  font-size: 400%;
+}
+#welcome .center-scrn h3 {
+  font-size: 125%;
+}
+
+.section {
+  padding: 2em;
+}
+.section .title {
+  font-size: 300%;
+  padding: 0.5em;
+}
+.section .content {
+  padding: 1em;
+}
+.section .content p {
+  padding: 1em;
+  width: 60%;
+  text-indent: 20px;
+}
+
+#aboutus {
+  background: rgba(51, 51, 51, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #fff;
+}
+#aboutus p {
+  color: #b3b3b3;
+}
+
+#projects {
+  background: rgba(85, 85, 85, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+}
+#projects p {
+  color: #b3b3b3;
+}
+
+#contact {
+  background: rgba(51, 51, 51, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #fff;
+}
+#contact p {
+  color: #b3b3b3;
 }
 
 /*# sourceMappingURL=home.min.css.map */

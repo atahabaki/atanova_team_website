@@ -2,8 +2,47 @@ doctype html
 html
 	head
 		title #{title} - Fritim & Atanova
+		meta(name="viewport" content="width=device-width,initial-scale:1.0")
 		link(rel="stylesheet" href="css/home.min.css")
 	body
-		div#welcome.center.fscreen
-			h1 Fritim & Atanova
-			h3 Welcome to the future of flying...
+		header#navbar.center-cntnt
+			a(href="#welcome") Home
+			a(href="#aboutus") About Us
+			a(href="#projects") Projects
+			a(href="#contact") Contact Us
+			a(href="/blog") Blog
+		div.bgscrn.center-scrn
+			video(loop autoplay muted playsinline)
+				source(src="https://www.lionsgate.com/media/videos/background/lg_clouds_loop_launch_shortversion.mp4")
+		div.float-scrn
+			div#welcome.fscreen
+				div.center-scrn.center-cntnt
+					h1 Fritim & Atanova
+					h3 Welcome to the future of flying...
+			div#aboutus.fscreen
+				div.section
+					h3.title About Us
+					div.content
+						p
+							| We're a small team which develops flying machines, basically UAVs.
+							| We're a small team which develops flying machines, basically UAVs.
+							| We're a small team which develops flying machines, basically UAVs.
+							| We're a small team which develops flying machines, basically UAVs.
+							| We're a small team which develops flying machines, basically UAVs.
+							| We're a small team which develops flying machines, basically UAVs.
+			div#projects.fscreen
+				div.section
+					h3.title Projects
+			div#contact.fscreen
+				div.section
+					h3.title Contact Us
+		script.
+			window.addEventListener('scroll', (e) => {
+				let x = document.getElementById('navbar');
+				if (window.scrollY == 0) {
+					x.classList.remove('scrolled');
+				}
+				else {
+					x.classList.add('scrolled');
+				}
+			})

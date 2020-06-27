@@ -1,2 +1,36 @@
 @import 'vars';
+@import 'mixins';
 @import 'reset';
+@import 'center';
+@import 'fscreen';
+@import 'header';
+@import 'bgscrn';
+@import 'welcome';
+@import 'section';
+
+#aboutus {
+	background: rgba(#333,.7);
+	@include blurry($blrpx);
+	color: #fff;
+	p {
+		color: darken($color: #ccc, $amount: 10);
+	}
+}
+
+#projects {
+	background: rgba(#555,.7);
+	@include blurry(10px);
+	color: #fff;
+	p {
+		color: darken($color: #ccc, $amount: 10);
+	}
+}
+
+#contact {
+	background: rgba(#333,.5);
+	@include blurry(20px);
+	color: #fff;
+	p {
+		color: darken($color: #ccc, $amount: 10);
+	}
+}

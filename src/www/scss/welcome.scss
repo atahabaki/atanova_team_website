@@ -1,0 +1,12 @@
+#welcome {
+	background: $bgclr-primary;
+	@include blurry($blrpx);
+	.center-scrn {
+		h1 {
+			font-size: 400%;
+		}
+		h3 {
+			font-size: 125%;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.center-scrn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.center-cntnt {
+	text-align: center;
+}
+.center-blck {
+	display: block;
+	margin: auto;
+}
